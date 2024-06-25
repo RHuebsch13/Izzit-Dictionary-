@@ -16,12 +16,13 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-@app.route("/")
+
 @app.route('/')
 def home():
     letters = [chr(i) for i in range(ord('A'), ord('Z') + 1)]  # List of letters A-Z
     terms = list(mongo.db.definitions.find().sort("term", 1))  # Fetch all terms sorted alphabetically
     return render_template('index.html', terms=terms, letters=letters)
+    
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
