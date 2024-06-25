@@ -1,0 +1,27 @@
+<!-- app/templates/index.html -->
+{% extends "base.html" %}
+
+{% block title %}Izzit Dictionary - Home{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>Definitions</h2>
+        <ul>
+            {% for definition in definitions %}
+                <li>
+                    <h3>{{ definition.term }}</h3>
+                    <p>{{ definition.definition }}</p>
+                    <small>Created by: {{ definition.created_by }}</small>
+                    <br>
+                    <small>Created at: {{ definition.created_at }}</small>
+                    <br>
+                    <small>Updated at: {{ definition.updated_at }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
+
+
+
+

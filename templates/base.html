@@ -1,0 +1,52 @@
+<!-- app/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Izzit Dictionary{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo">
+            </a>
+        </div>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn">Browse</button>
+                <div class="dropdown-content">
+                    <a href="#">A</a>
+                    <a href="#">B</a>
+                    <!-- Add other alphabet letters dynamically if needed -->
+                </div>
+            </div>
+            <div class="user-options">
+                {% if 'user' in session %}
+                    <a href="{{ url_for('add_term') }}" class="add-word">
+                        <img src="{{ url_for('static', filename='add_icon.png') }}" alt="Add Word">
+                    </a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">Login</a>
+                {% endif %}
+            </div>
+        </nav>
+        <div class="search-bar">
+            <form action="{{ url_for('search') }}" method="GET">
+                <input type="text" name="query" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Izzit Dictionary. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

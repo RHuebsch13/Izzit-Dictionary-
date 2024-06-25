@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Izzit Dictionary - Add Term{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>Add/Edit Term</h2>
+        <form method="POST" action="{{ url_for('add_term') }}">
+            <label for="term">Term:</label>
+            <input type="text" id="term" name="term" required>
+            <br>
+            <label for="definition">Definition:</label>
+            <textarea id="definition" name="definition" required></textarea>
+            <br>
+            <button type="submit">Save</button>
+        </form>
+    </section>
+{% endblock %}
