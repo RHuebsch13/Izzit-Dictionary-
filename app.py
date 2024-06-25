@@ -17,23 +17,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route('/')
-def home():
-    letters = [chr(i) for i in range(ord('A'), ord('Z') + 1)]  # List of letters A-Z
-    terms = list(mongo.db.definitions.find().sort("term", 1))  # Fetch all terms sorted alphabetically
-    return render_template('index.html', terms=terms, letters=letters)
-    
-
-@app.route('/search', methods=['GET', 'POST'])
-def search():
-    if request.method == 'POST':
-        search_query = request.form.get('search_query')
-        terms = list(mongo.db.definitions.find({"term": {"$regex": search_query, "$options": "i"}}).sort("term", 1))
-        return render_template('index.html', terms=terms)
-    return redirect(url_for('home'))
+@app.route("/")
+@app.route("/get_tasks")
+def get_tasks():
+    tasks = mongo.db.tasks.find()
+    return render_template("tasks.html", tasks=tasks)
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP", "0.0.0.0"),
-            port=int(os.environ.get("PORT", 5000)),
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
             debug=True)
