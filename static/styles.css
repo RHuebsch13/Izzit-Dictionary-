@@ -1,0 +1,63 @@
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .browse-dropdown {
+    margin-right: 20px;
+  }
+  
+  .right-side {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-button,
+  .add-word-button {
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  .login-button:hover,
+  .add-word-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+  }
+  
+  /* Word List */
+  .word-list {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .word-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  

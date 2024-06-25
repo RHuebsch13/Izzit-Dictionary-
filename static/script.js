@@ -1,5 +1,4 @@
-// scripts.js
-
+// nav bar functioning 
 function browseTerms(letter) {
     // Logic to filter terms by selected letter and update word list
     // You may use AJAX to fetch and update the word list dynamically
