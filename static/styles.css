@@ -1,63 +1,80 @@
-/* Navigation Bar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #f0f0f0;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
-  
-  .browse-dropdown {
-    margin-right: 20px;
-  }
-  
-  .right-side {
-    display: flex;
-    align-items: center;
-  }
-  
-  .login-button,
-  .add-word-button {
-    padding: 8px 12px;
-    text-decoration: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-  }
-  
-  .login-button:hover,
-  .add-word-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Search Bar */
-  .search-bar {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    width: 300px;
-  }
-  
-  /* Word List */
-  .word-list {
-    margin-top: 20px;
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .word-list li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
+/* Navbar Styling */
+#navigation-bar {
+  background-color: #FBE5B6;
+  padding: 10px;
+}
+
+#navigation-bar .nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto; /* Center align if necessary */
+}
+
+#navigation-bar .brand-logo img {
+  max-width: 100px; /* Adjust maximum width of the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 20px; /* Adjust spacing between icons */
+}
+
+.nav-links li:first-child {
+  margin-left: 0; /* No margin for the first icon */
+}
+
+.nav-links li a {
+  color: #561217;
+  font-size: 18px;
+}
+
+.user-actions1 {
+  margin-left: auto; /* Pushes the list to the right */
+}
+
+/* Search Bar and User Actions */
+.search-bar {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-actions2 {
+  margin-top: 10px; /* Adjust vertical spacing */
+}
+
+.user-actions2 a {
+  margin-right: 10px; /* Adjust spacing between buttons */
+  color: #561217;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

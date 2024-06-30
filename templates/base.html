@@ -1,52 +1,73 @@
-<!-- app/templates/base.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Izzit Dictionary{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Ms+Madi&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9e9d8a38ff.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo">
-            </a>
-        </div>
-        <nav>
-            <div class="dropdown">
-                <button class="dropbtn">Browse</button>
-                <div class="dropdown-content">
-                    <a href="#">A</a>
-                    <a href="#">B</a>
-                    <!-- Add other alphabet letters dynamically if needed -->
-                </div>
-            </div>
-            <div class="user-options">
-                {% if 'user' in session %}
-                    <a href="{{ url_for('add_term') }}" class="add-word">
-                        <img src="{{ url_for('static', filename='add_icon.png') }}" alt="Add Word">
-                    </a>
-                    <a href="{{ url_for('logout') }}">Logout</a>
-                {% else %}
-                    <a href="{{ url_for('login') }}">Login</a>
-                {% endif %}
-            </div>
-        </nav>
+    <!-- Navbar -->
+    <!-- Navbar -->
+<nav id="navigation-bar">
+    <div class="nav-wrapper">
+        <a href="{{ url_for('index') }}" class="brand-logo">
+            <img id="logo" src="{{ url_for('static', filename='logo.jpg') }}" alt="Izzit Dictionary Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}"><i class="fas fa-arrow-down-a-z"></i> Browse</a></li>
+            <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <!-- Search Bar and Actions -->
+    <div class="container">
         <div class="search-bar">
             <form action="{{ url_for('search') }}" method="GET">
                 <input type="text" name="query" placeholder="Search...">
-                <button type="submit">Search</button>
+                <button type="submit" class="btn brown lighten-1">Search</button>
             </form>
         </div>
-    </header>
-    <main>
+        <div class="user-actions2">
+            {% if 'user' in session %}
+                <a href="{{ url_for('add_term') }}" class="btn brown lighten-1"><i class="fa-solid fa-plus-circle"></i> Add Term</a>
+                <a href="{{ url_for('logout') }}" class="btn brown lighten-1"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <main class="container">
         {% block content %}{% endblock %}
     </main>
-    <footer>
-        <p>&copy; 2024 Izzit Dictionary. All rights reserved.</p>
+
+    <footer class="page-footer brown lighten-1">
+        <div class="footer-copyright">
+            <div class="container">
+                <p class="white-text right">&copy; 2024 Izzit Dictionary</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
