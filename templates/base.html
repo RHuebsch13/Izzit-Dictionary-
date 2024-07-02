@@ -18,12 +18,23 @@
         </a>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('index') }}"><i class="fas fa-arrow-down-a-z"></i></a>
+                <a class="nav-link" href="{{ url_for('index') }}" id="browse-icon"><i class="fas fa-arrow-down-a-z"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('login') }}"><i class="fas fa-user"></i></a>
             </li>
         </ul>
+         <!-- Letter buttons (initially hidden) -->
+    <div id="letter-buttons"  style="display: none;">
+        <ul class="p-0 list-none m-0 font-bold text-sm grid grid-cols-5 gap-1 gap-y-2">
+            {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ*" %}
+                <li>
+                    <a aria-label="Show words beginning with {{ letter }}" class="nav-link" href="/browse.php?character={{ letter }}">{{ letter }}</a>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
     </nav>
 
     <!-- Search Bar and Actions -->
@@ -31,26 +42,24 @@
         <div class="search-bar">
             <form action="{{ url_for('search') }}" method="GET">
                 <input type="text" name="query" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-outline-secondary">Search</button>
-                </div>
             </form>
+            <div class="user-actions2">
+                {% if 'user' in session %}
+                    <a href="{{ url_for('add_term') }}" class="btn btn-outline-secondary"><i class="fa-solid fa-plus-circle"></i></a>
+                    <a href="{{ url_for('logout') }}" class="btn btn-outline-secondary"><i class="fa-solid fa-sign-out-alt"></i></a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="btn btn-outline-secondary"><i class="fa-solid fa-plus-circle"></i></a>
+                {% endif %}
+            </div>
         </div>
-        <div class="user-actions2">
-            {% if 'user' in session %}
-                <a href="{{ url_for('add_term') }}" class="btn btn-outline-secondary"><i class="fa-solid fa-plus-circle"></i> Add Term</a>
-                <a href="{{ url_for('logout') }}" class="btn btn-outline-secondary"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
-            {% endif %}
-        </div>
-    </div>
 
     <main class="container">
         {% block content %}{% endblock %}
     </main>
 
     <footer class="page-footer">
-        <div class="container">
-            <p class="text-right">&copy; 2024 Izzit Dictionary</p>
+        <div class="container-fluid">
+            <p class="text-center custom-color">&copy; 2024 Izzit Dictionary</p>
         </div>
     </footer>
 
@@ -58,6 +67,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
 

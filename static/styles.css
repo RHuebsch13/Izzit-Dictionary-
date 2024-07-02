@@ -1,6 +1,6 @@
 /* Navbar Styling */
 .navbar {
-  background-color: #FBE5B6;
+  background-color: #561217;
 }
 
 .navbar .navbar-nav {
@@ -10,38 +10,121 @@
 }
 
 .navbar-brand img {
-  max-width: 100px;
+  max-width: 150px;
   height: auto;
   margin: 10px;
 }
 
 .navbar-nav .nav-item .nav-link {
-  color: #561217;
+  color: #FBE5B6;
   font-size: 18px;
   padding: 15px; 
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #F38218;
 }
 
 /* Search Bar and User Actions */
 .search-bar {
   margin-top: 20px;
   padding: 10px;
-  border: 1px solid #ccc;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  border: none;
+  flex: 1; 
+}
+
+.search-bar form {
+  width: 100%; /
 }
 
 .user-actions2 {
-  margin-top: 10px; 
+  color: #2C6E63;
+  display: flex;
+  align-items: center;
 }
 
 .user-actions2 a {
-  margin-right: 10px; 
+  border: none; 
+  font-size: 3rem;
+  color: #2C6E63;
+}
+
+.user-actions2 a.btn.btn-outline-secondary:hover {
+  background-color: transparent; 
+  color: #F38218; 
+}
+
+body {
+  background-color: #FBE5B6;
+}
+
+.page-footer .custom-color {
   color: #561217;
 }
 
+.custom-color {
+  color: #561217;
+}
 
+.term {
+  color:#2C6E63
+}
 
+.definition {
+  color: #561217
+}
+
+/* Browse letter grid */
+
+/* log in and register forms*/
+.auth-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.auth-form {
+  width: 45%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  background-color: #561217;
+}
+
+.auth-form h2 {
+  margin-bottom: 1rem;
+  color: #FBE5B6;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #FBE5B6;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background-color: #f8B735;
+  color: #561217;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #F38218;
+}
 
 
 

@@ -83,6 +83,33 @@ def search():
     
     return render_template('index.html', definitions=matching_definitions)
 
+# Add this route to handle registration
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        confirm_password = request.form['confirm_password']
+        
+        if password != confirm_password:
+            flash('Passwords do not match!')
+            return redirect(url_for('register'))
+
+        users = mongo.db.users
+        existing_user = users.find_one({'username': username})
+        
+        if existing_user is None:
+            hash_pass = generate_password_hash(password)
+            users.insert_one({'username': username, 'password': hash_pass})
+            session['user'] = str(users.find_one({'username': username})['_id'])
+            return redirect(url_for('index'))
+        else:
+            flash('Username already exists!')
+            return redirect(url_for('register'))
+    
+    return render_template('register.html')
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP", "0.0.0.0"),
             port=int(os.environ.get("PORT", 5000)),
