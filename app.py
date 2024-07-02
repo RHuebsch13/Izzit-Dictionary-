@@ -23,8 +23,14 @@ mongo = PyMongo(app)
 # Routes
 @app.route('/')
 def index():
-    # Fetch all definitions
-    all_definitions = mongo.db.definitions.find()
+    # Fetch all definitions sorted by term alphabetically
+    all_definitions = list(mongo.db.definitions.find().sort('term', 1))
+    # Format dates for display
+    for definition in all_definitions:
+        if 'created_at' in definition:
+            definition['created_at'] = definition['created_at'].strftime('%Y-%m-%d %H:%M:%S')
+        if 'updated_at' in definition:
+            definition['updated_at'] = definition['updated_at'].strftime('%Y-%m-%d %H:%M:%S')
     return render_template('index.html', definitions=all_definitions)
 
 @app.route('/login', methods=['GET', 'POST'])
