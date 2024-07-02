@@ -1,45 +1,24 @@
 /* Navbar Styling */
-#navigation-bar {
+.navbar {
   background-color: #FBE5B6;
-  padding: 10px;
 }
 
-#navigation-bar .nav-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px; /* Adjust as needed */
-  margin: 0 auto; /* Center align if necessary */
-}
-
-#navigation-bar .brand-logo img {
-  max-width: 100px; /* Adjust maximum width of the logo */
-  height: auto; /* Maintain aspect ratio */
-}
-
-.nav-links {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.navbar .navbar-nav {
+  margin-left: auto; 
   display: flex;
   align-items: center;
 }
 
-.nav-links li {
-  margin-left: 20px; /* Adjust spacing between icons */
+.navbar-brand img {
+  max-width: 100px;
+  height: auto;
+  margin: 10px;
 }
 
-.nav-links li:first-child {
-  margin-left: 0; /* No margin for the first icon */
-}
-
-.nav-links li a {
+.navbar-nav .nav-item .nav-link {
   color: #561217;
   font-size: 18px;
-}
-
-.user-actions1 {
-  margin-left: auto; /* Pushes the list to the right */
+  padding: 15px; 
 }
 
 /* Search Bar and User Actions */
@@ -53,11 +32,11 @@
 }
 
 .user-actions2 {
-  margin-top: 10px; /* Adjust vertical spacing */
+  margin-top: 10px; 
 }
 
 .user-actions2 a {
-  margin-right: 10px; /* Adjust spacing between buttons */
+  margin-right: 10px; 
   color: #561217;
 }
 

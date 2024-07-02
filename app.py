@@ -59,9 +59,6 @@ def add_term():
         definition_doc = {
             'term': term,
             'definition': definition,
-            'created_by': created_by,
-            'created_at': datetime.utcnow(),
-            'updated_at': datetime.utcnow()
         }
         definitions.insert_one(definition_doc)
         return redirect(url_for('index'))

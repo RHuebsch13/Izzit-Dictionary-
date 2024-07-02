@@ -4,41 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Izzit Dictionary{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Ms+Madi&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9e9d8a38ff.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Navbar -->
-    <!-- Navbar -->
-<nav id="navigation-bar">
-    <div class="nav-wrapper">
-        <a href="{{ url_for('index') }}" class="brand-logo">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
             <img id="logo" src="{{ url_for('static', filename='logo.jpg') }}" alt="Izzit Dictionary Logo">
         </a>
-        <ul class="nav-links">
-            <li><a href="{{ url_for('index') }}"><i class="fas fa-arrow-down-a-z"></i> Browse</a></li>
-            <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i> Login</a></li>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index') }}"><i class="fas fa-arrow-down-a-z"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('login') }}"><i class="fas fa-user"></i></a>
+            </li>
         </ul>
-    </div>
-</nav>
-
+    </nav>
 
     <!-- Search Bar and Actions -->
     <div class="container">
         <div class="search-bar">
             <form action="{{ url_for('search') }}" method="GET">
-                <input type="text" name="query" placeholder="Search...">
-                <button type="submit" class="btn brown lighten-1">Search</button>
+                <input type="text" name="query" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-outline-secondary">Search</button>
+                </div>
             </form>
         </div>
         <div class="user-actions2">
             {% if 'user' in session %}
-                <a href="{{ url_for('add_term') }}" class="btn brown lighten-1"><i class="fa-solid fa-plus-circle"></i> Add Term</a>
-                <a href="{{ url_for('logout') }}" class="btn brown lighten-1"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
+                <a href="{{ url_for('add_term') }}" class="btn btn-outline-secondary"><i class="fa-solid fa-plus-circle"></i> Add Term</a>
+                <a href="{{ url_for('logout') }}" class="btn btn-outline-secondary"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
             {% endif %}
         </div>
     </div>
@@ -47,17 +48,20 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="page-footer brown lighten-1">
-        <div class="footer-copyright">
-            <div class="container">
-                <p class="white-text right">&copy; 2024 Izzit Dictionary</p>
-            </div>
+    <footer class="page-footer bg-dark text-white">
+        <div class="container">
+            <p class="text-right">&copy; 2024 Izzit Dictionary</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
 
 
 
