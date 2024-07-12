@@ -33,6 +33,20 @@ def index():
             definition['updated_at'] = definition['updated_at'].strftime('%Y-%m-%d %H:%M:%S')
     return render_template('index.html', definitions=all_definitions)
 
+
+@app.route('/browse/<letter>')
+def browse(letter):
+    # Fetch definitions that start with the selected letter
+    definitions = []
+    if letter == '*':
+        definitions = list(mongo.db.definitions.find({}))
+    else:
+        definitions = list(mongo.db.definitions.find({'term': {'$regex': f'^{letter}', '$options': 'i'}}))
+    
+    return render_template('browse.html', definitions=definitions, letter=letter)
+
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':

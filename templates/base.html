@@ -11,31 +11,28 @@
     <script src="https://kit.fontawesome.com/9e9d8a38ff.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="{{ url_for('index') }}">
-            <img id="logo" src="{{ url_for('static', filename='logo.jpg') }}" alt="Izzit Dictionary Logo">
-        </a>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('index') }}" id="browse-icon"><i class="fas fa-arrow-down-a-z"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('login') }}"><i class="fas fa-user"></i></a>
-            </li>
-        </ul>
-         <!-- Letter buttons (initially hidden) -->
-    <div id="letter-buttons"  style="display: none;">
-        <ul class="p-0 list-none m-0 font-bold text-sm grid grid-cols-5 gap-1 gap-y-2">
-            {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ*" %}
-                <li>
-                    <a aria-label="Show words beginning with {{ letter }}" class="nav-link" href="/browse.php?character={{ letter }}">{{ letter }}</a>
-                </li>
-            {% endfor %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="{{ url_for('index') }}">
+        <img id="logo" src="{{ url_for('static', filename='logo.jpg') }}" alt="Izzit Dictionary Logo">
+    </a>
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="browse-icon">
+                <i class="fas fa-arrow-down-a-z"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="browse-icon" style="display: none;">
+                {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+                    <a class="dropdown-item" aria-label="Show words beginning with {{ letter }}" href="{{ url_for('browse', letter=letter) }}">{{ letter }}</a>
+                {% endfor %}
+            </div>            
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}"><i class="fas fa-user"></i></a>
+        </li>
+    </ul>
+</nav>
 
-        </ul>
-    </div>
-    </nav>
 
     <!-- Search Bar and Actions -->
     <div class="container">

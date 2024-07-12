@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Browse Definitions{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Terms starting with '{{ letter }}'</h2>
+    <ul class="list-group">
+        {% for definition in definitions %}
+            <li class="list-group-item">
+                <strong>{{ definition.term }}</strong>: {{ definition.definition }}
+            </li>
+        {% else %}
+            <li class="list-group-item">No definitions found for this letter.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}" class="btn back-home mt-3">Back</a>
+</div>
+{% endblock %}
+
+

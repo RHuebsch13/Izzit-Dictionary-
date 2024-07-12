@@ -4,9 +4,7 @@
 }
 
 .navbar .navbar-nav {
-  margin-left: auto; 
-  display: flex;
-  align-items: center;
+  margin-right: auto; 
 }
 
 .navbar-brand img {
@@ -76,8 +74,6 @@ body {
   color: #561217
 }
 
-/* Browse letter grid */
-
 /* log in and register forms*/
 .auth-container {
   display: flex;
@@ -125,6 +121,50 @@ body {
 .auth-form button:hover {
   background-color: #F38218;
 }
+
+/*styling for back-to-home button */
+.back-home{
+  background-color: #2C6E63; /* Normal state */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+} 
+
+.back-home:hover {
+  background-color: #F38218; /* Hover state */
+  color: #561217; /* Optional: Change text color on hover */
+}
+
+/* Styling for browse dropdown */
+.dropdown-menu {
+  position: absolute; /* Position it relative to the nearest positioned ancestor */
+  width: 300px;
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 5px; /* Space between items */
+  background-color: #f8B735;
+}
+
+.dropdown-item {
+  width: 60px; /* Fixed width for square boxes */
+  height: 60px; /* Fixed height for square boxes */
+  text-align: center; /* Center-align text */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.2s; /* Smooth hover effect */
+  
+}
+
+.dropdown-item:hover {
+  background-color: #FBE5B6; /* Background on hover */
+}
+
+
+
+
+
+
 
 
 
