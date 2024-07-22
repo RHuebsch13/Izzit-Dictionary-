@@ -29,12 +29,20 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  border: none;
+  border: 1px #561217;
   flex: 1; 
 }
 
 .search-bar form {
   width: 100%; 
+}
+
+.search-bar form input[type="text"] {
+  border: 1px solid #561217;
+}
+
+.search-bar form input[type="text"]::placeholder {
+  color: #561217;
 }
 
 .user-actions2 {
@@ -158,6 +166,57 @@ body {
 
 .dropdown-item:hover {
   background-color: #FBE5B6; 
+}
+
+/*styling for add term form*/
+.add-term-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Style the heading within the add-term-section */
+.add-term-section h2 {
+  color: #561217;
+  margin-bottom: 20px;
+}
+
+/* Style labels within the add-term-section */
+.add-term-section label {
+  color: #561217;
+  font-weight: bold;
+}
+
+/* Style input fields within the add-term-section */
+.add-term-section input[type="text"],
+.add-term-section textarea {
+  border: 2px solid #561217;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+
+.add-term-section textarea {
+  height: 100px;
+}
+
+/* Style the submit button within the add-term-section */
+.add-term-section button[type="submit"] {
+  background-color: #f8B735;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.add-term-section button[type="submit"]:hover {
+  background-color: #F38218;
 }
 
 /* Media Queries */
