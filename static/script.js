@@ -14,7 +14,18 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdownMenu.style.display = 'none'; // Hide dropdown
         }
     });
+
+    // Capitalize the first letter of the term before form submission
+    document.querySelector('form').addEventListener('submit', function(event) {
+        var termInput = document.getElementById('term');
+        var termValue = termInput.value;
+        if (termValue) {
+            termInput.value = termValue.charAt(0).toUpperCase() + termValue.slice(1).toLowerCase();
+        }
+    });
 });
+
+
 
 
 

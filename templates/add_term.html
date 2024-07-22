@@ -4,7 +4,7 @@
 
 {% block content %}
     <section>
-        <h2>Add/Edit Term</h2>
+        <h2>Add a New Term</h2>
         <form method="POST" action="{{ url_for('add_term') }}">
             <label for="term">Term:</label>
             <input type="text" id="term" name="term" required>
@@ -16,3 +16,4 @@
         </form>
     </section>
 {% endblock %}
+
