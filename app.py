@@ -25,14 +25,13 @@ mongo = PyMongo(app)
 def check_session():
     """Check if the session is valid; if not, log out the user."""
     if 'user' in session:
-        # Check if the session has expired
-        if not session.get('permanent'):
-            session.permanent = True
-        else:
-            if (datetime.utcnow() - session.get('last_active', datetime.utcnow())) > app.config['PERMANENT_SESSION_LIFETIME']:
-                session.pop('user', None)
-                return redirect(url_for('index'))
+        # Ensure last_active is offset-naive
+        last_active = session.get('last_active', datetime.utcnow()).replace(tzinfo=None)
+        if (datetime.utcnow() - last_active) > app.config['PERMANENT_SESSION_LIFETIME']:
+            session.pop('user', None)
+            return redirect(url_for('index'))
         session['last_active'] = datetime.utcnow()
+
 
 # Routes
 @app.route('/')
@@ -68,8 +67,7 @@ def login():
         user = users.find_one({'username': username})
         if user and check_password_hash(user['password'], password):
             session['user'] = str(user['_id'])
-            session['last_active'] = datetime.utcnow()
-            session.permanent = True  # Ensure the session is marked as permanent
+            session['last_active'] = datetime.utcnow().replace(tzinfo=None)
             return redirect(url_for('index'))
         else:
             flash('Invalid username or password')
