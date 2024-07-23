@@ -1,6 +1,10 @@
 # Izzit? Dictionary 
 Is it? /'izzit/ - is a responsive phrase, frequently used in conversation meaning 'Is that so?' or 'Really?'.
 
+As a South African living in Wales, I often get puzzled looks when I use some of my South Africanisms. For this reason, I took the opportunity to create this dictionary. Whether you’re a homesick South African, like me or someone curious about new jargon, I hope you find it both helpful and entertaining. Enjoy!
+
+![The Site](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/responsive.png?raw=true)
+
 # Table of Contents
 
 1. [UX](#ux)
@@ -24,7 +28,6 @@ Is it? /'izzit/ - is a responsive phrase, frequently used in conversation meanin
 ## Project goals
 Build the database of slang words commonly used by South Africans to increase communication, connection and understanding with this subset of people.
 
-![The Site](URL_to_your_image)
 
 ## User Goals
 This project aims to assist user in:
@@ -52,16 +55,16 @@ Allow users to easily:
 
 
 ## Design choices
-
+Clean, simple styling was used, with minimal images to give a clutter free visual while maintaining accessibility for the site. Design draws subtle lines to South African themes. Examples of this would be the use of the South African flag as the favicon and the colour scheme is after the South African national flower; the Protea.
 
 ### Fonts
-
+Fonts are simple and easy to read.
 
 ### Colours
-![colour scheme]()
+![colour scheme](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/colors.jpg?raw=true)
 
 ### Styling
-
+Site sturcture and layout aims at explicitness. Making the users access to the jargon and terms unhindered, there are no tricky protocols and learning can begin instantly. Icons used are familar to most users so discerning each's use should not be difficult.
 
 ### Backgrounds
 The design choice of one solid background colour was made to maintain accessibility for the user. Solid colours were used to make the content stand out.
@@ -71,8 +74,9 @@ The Nav bar consists of a logo which is also a link to the main page. There is a
 
 ## Wireframes
 Designed in balsamiq, there are 3 wireframes for each page. Providing planned layout and views on large screens, medium screens and small screens.
-
-
+![Big Screens](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/Bscreen.png?raw=true)
+![Medium Screens](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/Mscreen.png?raw=true)
+![Small Screens](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/Sscreen.png?raw=true)
 
 # 2. Features
 
@@ -106,8 +110,6 @@ Am I Responsive - used to create the mock-up image showing the site
 Google Chrome Developer Tools - Used to test the responsiveness of the site
 Font Awesome - Used to source icons
 Canva - Used to create wireframes and logo
-Pixabay - Used to source hero image
-Wikipedia - Used to source book cover pictures and book synopsis description
 Github - GitHub for versionn control for the development of application up to deployment
 Gitpod -An online IDE used to build and develop the website
 Heroku- The cloud platform used to host the deployed site
@@ -118,9 +120,7 @@ RandomKeyGen - Used to generate the Secret Key
 W3C CSS Validation Service - Used to validate the CSS code
 W3C HTML Validation Service - Used to validate the HTML code
 Pep8CI - Used to check the run.py file for PEP8 compliance
-ElephantSQL - PostgreSQL database hosting service
-
-
+MongoDB - database hosting service
 
 
 # 4. Testing
@@ -135,6 +135,9 @@ Testing is done to verify that the software behaves as expected and meets the sp
 
 
 ## Lighthouse Testing
+[View the PDF - mobile](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/lighthouseDesktop.pdf)
+
+[View the PDF - desktop](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/lighthouseMobile.pdf)
 
 
 ## Bug Problems
