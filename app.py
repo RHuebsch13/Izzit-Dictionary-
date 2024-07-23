@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -20,6 +20,7 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 
 # Initialize PyMongo
 mongo = PyMongo(app)
+
 
 @app.before_request
 def check_session():
@@ -54,7 +55,7 @@ def browse(letter):
         definitions = list(mongo.db.definitions.find({}))
     else:
         definitions = list(mongo.db.definitions.find({'term': {'$regex': f'^{letter}', '$options': 'i'}}))
-    
+
     return render_template('browse.html', definitions=definitions, letter=letter)
 
 
@@ -85,7 +86,7 @@ def logout():
 def add_term():
     if 'user' not in session:
         return redirect(url_for('login'))
-    
+
     if request.method == 'POST':
         term = request.form['term'].capitalize()  # Capitalize the first letter
         definition = request.form['definition']
@@ -99,7 +100,7 @@ def add_term():
         }
         definitions.insert_one(definition_doc)
         return redirect(url_for('index'))
-    
+
     return render_template('add_term.html')
 
 
@@ -123,14 +124,14 @@ def register():
         username = request.form['username']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
-        
+
         if password != confirm_password:
             flash('Passwords do not match!')
             return redirect(url_for('register'))
 
         users = mongo.db.users
         existing_user = users.find_one({'username': username})
-        
+
         if existing_user is None:
             hash_pass = generate_password_hash(password)
             users.insert_one({'username': username, 'password': hash_pass})
@@ -141,8 +142,9 @@ def register():
         else:
             flash('Username already exists!')
             return redirect(url_for('register'))
-    
+
     return render_template('register.html')
+
 
 @app.route('/edit_term/<term_id>', methods=['GET', 'POST'])
 def edit_term(term_id):
@@ -164,8 +166,9 @@ def edit_term(term_id):
             )
             return redirect(url_for('index'))
         return render_template('edit_term.html', term=term)
-    
+
     return redirect(url_for('index'))
+
 
 @app.route('/delete_term/<term_id>', methods=['POST'])
 def delete_term(term_id):
@@ -178,11 +181,11 @@ def delete_term(term_id):
     if term and term['created_by'] == ObjectId(session['user']):
         mongo.db.definitions.delete_one({'_id': ObjectId(term_id)})
         return redirect(url_for('index'))
-    
+
     return redirect(url_for('index'))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP", "0.0.0.0"),
             port=int(os.environ.get("PORT", 5000)),
             debug=True)
-
