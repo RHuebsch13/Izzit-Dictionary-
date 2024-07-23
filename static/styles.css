@@ -206,7 +206,6 @@ body {
   height: 100px;
 }
 
-/* Style the submit button within the add-term-section */
 .add-term-section button[type="submit"] {
   background-color: #f37c8f;
   border: none;
@@ -220,9 +219,60 @@ body {
   background-color: #d15259;
 }
 
+/*Edit term form*/
+.edit-term-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  width: 60%;
+}
+
+.edit-term-section h2 {
+  color: #78884a;
+  margin-bottom: 20px;
+}
+
+.edit-term-section label {
+  color: #78884a;
+  font-weight: bold;
+}
+
+.edit-term-section input[type="text"],
+.edit-term-section textarea {
+  border: 2px solid #4c3831;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+
+.edit-term-section textarea {
+  height: 100px;
+}
+
+.edit-term-section button[type="submit"] {
+  background-color: #f37c8f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.edit-term-section button[type="submit"]:hover {
+  background-color: #d15259;
+}
+
 /* footer */
 .page-footer .custom-color {
   color: #d15259;
+  padding-top: 5%;
 }
 
 /* Media Queries */
