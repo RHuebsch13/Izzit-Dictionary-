@@ -2,6 +2,11 @@
 
 {% block content %}
 <div class="container mt-4">
+    {% if message %}
+        <div class="alert alert-info" role="alert">
+            {{ message }}
+        </div>
+    {% endif %}
     <div class="row">
         {% for definition in definitions %}
         <div class="col-12 mb-4">
@@ -29,6 +34,7 @@
     </div>
 </div>
 {% endblock %}
+
 
 
 

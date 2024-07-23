@@ -107,13 +107,15 @@ def add_term():
 def search():
     query = request.args.get('query')
     if query:
-        # Perform a case-insensitive search in MongoDB
-        matching_definitions = mongo.db.definitions.find({'term': {'$regex': query, '$options': 'i'}})
+        matching_definitions = list(mongo.db.definitions.find({'term': {'$regex': query, '$options': 'i'}}))
     else:
-        # Handle case where no query is provided
-        matching_definitions = mongo.db.definitions.find()
-    
-    return render_template('index.html', definitions=matching_definitions)
+        matching_definitions = []
+
+    # Set the message based on whether there are matching definitions
+    message = "No results found." if not matching_definitions and query else None
+
+    return render_template('index.html', definitions=matching_definitions, message=message)
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
