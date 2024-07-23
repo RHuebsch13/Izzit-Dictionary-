@@ -24,6 +24,8 @@ Is it? /'izzit/ - is a responsive phrase, frequently used in conversation meanin
 ## Project goals
 Build the database of slang words commonly used by South Africans to increase communication, connection and understanding with this subset of people.
 
+![The Site](URL_to_your_image)
+
 ## User Goals
 This project aims to assist user in:
 * Understanding local conversations: Decode slang used in everyday South African conversations, social media, and local media.
