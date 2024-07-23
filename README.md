@@ -22,7 +22,7 @@ Is it? /'izzit/ - is a responsive phrase, frequently used in conversation meanin
 
 # 1. UX
 ## Project goals
-Build the database of slang words commonly used by South Africans to increase communication, conncetion and understanding with this subset of people.
+Build the database of slang words commonly used by South Africans to increase communication, connection and understanding with this subset of people.
 
 ## User Goals
 This project aims to assist user in:
