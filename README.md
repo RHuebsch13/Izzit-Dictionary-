@@ -1,6 +1,25 @@
 # Izzit? Dictionary 
 Is it? /'izzit/ - is a responsive phrase, frequently used in conversation meaning 'Is that so?' or 'Really?'.
 
+# Table of Contents
+
+1. [UX](#ux)
+   - [Project goals](#project-goals)
+   - [User Goals](#user-goals)
+   - [User Stories](#user-stories)
+   - [Design choices](#design-choices)
+2. [Features](#features)
+3. [Technology Used](#technology-used)
+4. [Testing](#testing)
+   - [Results](#results)
+     - [Manual Testing](#manual-testing)
+     - [Automation test](#automation-test)
+   - [Validation Tests](#validation-tests)
+   - [Lighthouse Testing](#lighthouse-testing)
+   - [Bug Problems](#bug-problems)
+5. [Deployment](#deployment)
+6. [Credits](#credits)
+
 # 1. UX
 ## Project goals
 Build the database of slang words commonly used by South Africans to increase communication, conncetion and understanding with this subset of people.
