@@ -130,7 +130,7 @@ body {
   background-color: #f37c8f;
 }
 
-/*styling for back-to-home button */
+/*Back-to-home button */
 .back-home{
   background-color: #f37c8f;
     color: #fff; 
@@ -142,7 +142,7 @@ body {
   color: #fff; 
 }
 
-/* Styling for browse dropdown */
+/* Browse dropdown menu */
 .dropdown-menu {
   position: absolute; 
   width: 300px;
@@ -169,7 +169,7 @@ body {
   background-color: #78884a; 
 }
 
-/*styling for add term form*/
+/*Add term form*/
 .add-term-section {
   display: flex;
   flex-direction: column;
@@ -182,19 +182,16 @@ body {
   width: 60%;
 }
 
-/* Style the heading within the add-term-section */
 .add-term-section h2 {
   color: #78884a;
   margin-bottom: 20px;
 }
 
-/* Style labels within the add-term-section */
 .add-term-section label {
   color: #78884a;
   font-weight: bold;
 }
 
-/* Style input fields within the add-term-section */
 .add-term-section input[type="text"],
 .add-term-section textarea {
   border: 2px solid #4c3831;
@@ -221,6 +218,11 @@ body {
 
 .add-term-section button[type="submit"]:hover {
   background-color: #d15259;
+}
+
+/* footer */
+.page-footer .custom-color {
+  color: #d15259;
 }
 
 /* Media Queries */
