@@ -1,6 +1,6 @@
 /* Navbar Styling */
 .navbar {
-  background-color: #561217;
+  background-color: #d15259;
 }
 
 .navbar .navbar-nav {
@@ -14,13 +14,13 @@
 }
 
 .navbar-nav .nav-item .nav-link {
-  color: #FBE5B6;
+  color: #fff;
   font-size: 18px;
   padding: 15px; 
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-  color: #F38218;
+  color: #f9bdc5;
 }
 
 /* Search Bar and User Actions */
@@ -29,7 +29,6 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  border: 1px #561217;
   flex: 1; 
 }
 
@@ -38,15 +37,15 @@
 }
 
 .search-bar form input[type="text"] {
-  border: 1px solid #561217;
+  border: 1px solid #d15259;
 }
 
 .search-bar form input[type="text"]::placeholder {
-  color: #561217;
+  color: #78884a;
 }
 
 .user-actions2 {
-  color: #2C6E63;
+  color: #78884a;
   display: flex;
   align-items: center;
 }
@@ -54,32 +53,32 @@
 .user-actions2 a {
   border: none; 
   font-size: 3rem;
-  color: #2C6E63;
+  color: #78884a;
 }
 
 .user-actions2 a.btn.btn-outline-secondary:hover {
   background-color: transparent; 
-  color: #F38218; 
+  color: #4c3831; 
 }
 
 body {
-  background-color: #FBE5B6;
+  background-color: #EDE8EA;
 }
 
 .page-footer .custom-color {
-  color: #561217;
+  color: #4c3831;
 }
 
 .custom-color {
-  color: #561217;
+  color: #4c3831;
 }
 
 .term {
-  color:#2C6E63
+  color:#78884a
 }
 
 .definition {
-  color: #561217
+  color: #4c3831
 }
 
 /* log in and register forms*/
@@ -94,18 +93,19 @@ body {
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 0.25rem;
-  background-color: #561217;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .auth-form h2 {
   margin-bottom: 1rem;
-  color: #FBE5B6;
+  color: #78884a;
 }
 
 .auth-form label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #FBE5B6;
+  color: #78884a;
 }
 
 .auth-form input {
@@ -120,26 +120,26 @@ body {
   width: 100%;
   padding: 0.75rem;
   border: none;
-  background-color: #f8B735;
-  color: #561217;
+  background-color: #4c3831;
+  color: #fff;
   border-radius: 0.25rem;
   cursor: pointer;
 }
 
 .auth-form button:hover {
-  background-color: #F38218;
+  background-color: #f37c8f;
 }
 
 /*styling for back-to-home button */
 .back-home{
-  background-color: #2C6E63;
-    color: #FBE5B6; 
+  background-color: #f37c8f;
+    color: #fff; 
     border: none; 
 } 
 
 .back-home:hover {
-  background-color: #F38218; 
-  color: #561217; 
+  background-color: #d15259; 
+  color: #fff; 
 }
 
 /* Styling for browse dropdown */
@@ -149,7 +149,8 @@ body {
   display: flex; 
   flex-wrap: wrap; 
   gap: 5px; 
-  background-color: #f8B735;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .dropdown-item {
@@ -165,7 +166,7 @@ body {
 }
 
 .dropdown-item:hover {
-  background-color: #FBE5B6; 
+  background-color: #78884a; 
 }
 
 /*styling for add term form*/
@@ -176,24 +177,27 @@ body {
   justify-content: center;
   padding: 20px;
   margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  width: 60%;
 }
 
 /* Style the heading within the add-term-section */
 .add-term-section h2 {
-  color: #561217;
+  color: #78884a;
   margin-bottom: 20px;
 }
 
 /* Style labels within the add-term-section */
 .add-term-section label {
-  color: #561217;
+  color: #78884a;
   font-weight: bold;
 }
 
 /* Style input fields within the add-term-section */
 .add-term-section input[type="text"],
 .add-term-section textarea {
-  border: 2px solid #561217;
+  border: 2px solid #4c3831;
   border-radius: 5px;
   padding: 10px;
   width: 100%;
@@ -207,7 +211,7 @@ body {
 
 /* Style the submit button within the add-term-section */
 .add-term-section button[type="submit"] {
-  background-color: #f8B735;
+  background-color: #f37c8f;
   border: none;
   border-radius: 5px;
   color: white;
@@ -216,7 +220,7 @@ body {
 }
 
 .add-term-section button[type="submit"]:hover {
-  background-color: #F38218;
+  background-color: #d15259;
 }
 
 /* Media Queries */
