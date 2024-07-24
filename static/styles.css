@@ -44,6 +44,19 @@
   color: #78884a;
 }
 
+/* back button for search from saerch bar */
+.sBack .btn-outline-secondary {
+  background-color: #f37c8f;
+  border-color: #f37c8f;
+  color: white;
+}
+
+.sBack .btn-outline-secondary:hover {
+  background-color: #d15259;
+  border-color: #d15259;
+  color: white;
+}
+
 .user-actions2 {
   color: #78884a;
   display: flex;
@@ -167,6 +180,13 @@ body {
 
 .dropdown-item:hover {
   background-color: #78884a; 
+}
+
+/*No results found message */
+.no-results {
+  border: #f9bdc5;
+  background-color: #f9bdc5;
+  color: #78884a;
 }
 
 /*Add term form*/
@@ -312,24 +332,3 @@ body {
     margin-bottom: 20px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
