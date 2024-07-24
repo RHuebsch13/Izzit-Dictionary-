@@ -50,8 +50,8 @@ Allow users to easily:
 * log in to the website
 * navigate through the site
 * add words and definitions they want to share with others
-* edit words they added to correct possible mistakes or add updates
-* delete words they added
+* edit words they've added, to correct possible mistakes or add updates
+* delete words they've added
 
 
 ## Design choices
@@ -92,44 +92,120 @@ When not logged in
 
 * Search: type specific words in the search to pull up desired word/s.
 
-* When logged in: users can addtional, add, edit and delete their own words.
+When logged in: 
+* Users may still navigate through the various search options and view terms as when not logged in.
+
+* Users can only add new terms and edit/delete their own additions while logged in.
 
 * Log out: log out option is located in the nav bar.
 
 
 ## Left to Implement
-* Admin approval before word added by user is published on site. 
+* Admin approval before a word added by user is published on site. 
 
 # 3. Technology Used
 * Languages: HTML, CSS, JavaScript, Python
-* Frameworks: Flask, materalise?
+* Frameworks: Flask, Bootstrap
 * Database: MongoDB
-Websites
-realfavicongenerator - generate a favicon
-Am I Responsive - used to create the mock-up image showing the site
-Google Chrome Developer Tools - Used to test the responsiveness of the site
-Font Awesome - Used to source icons
-Canva - Used to create wireframes and logo
-Github - GitHub for versionn control for the development of application up to deployment
-Gitpod -An online IDE used to build and develop the website
-Heroku- The cloud platform used to host the deployed site
-Slack - Used during development and testing to find the solutions for the encountered problems
-Stack Overflow - Used to search for the answers to encountered problems
-Code Institute - Used to review concepts covered in preceding modules and walk-through projects
-RandomKeyGen - Used to generate the Secret Key
-W3C CSS Validation Service - Used to validate the CSS code
-W3C HTML Validation Service - Used to validate the HTML code
-Pep8CI - Used to check the run.py file for PEP8 compliance
-MongoDB - database hosting service
+* WireFrames: Balsalmiq
+* Favicon: Realfavicongenerator 
+* Mock-up image of site: Am I Responsive 
+* Responsiveness of the site: Google Chrome Developer Tools - Used to test the 
+* Icons: Font Awesome
+* Logo: Canva 
+* Version Control: Github 
+* IDE : codeinstitute-ide
+* deployment: Heroku
+* Trouble shooting: Slack, tutor support.
+* Secret Key: RandomKeyGen 
+* Validation: W3C Validation Services (CSS and HTML), Pep8CI(Python), jshint(Javascript)
 
 
 # 4. Testing
 Testing is done to verify that the software behaves as expected and meets the specified requirements. There are two types of testing, both are undertaken in this project: Manual testing involves human testers executing test cases for verification, while Automation testing involves the use of automation tools to execute tests. Jest is an example of such tools.
 ## Results
 ### Manual Testing
+## CREATE
+
+**Objective**: Verify that users can create new terms and definitions and that input fields adhere to validation rules.
+
+**Fields to Test**:
+- **Term**: Required, can be any length
+- **Definition**: Required, should be at least 50 characters long
+
+| Test | Expected Outcome | Result |
+|------|------------------|--------|
+| Create a new term with various special characters and lengths, including non-Latin characters (e.g., Polish, Japanese, Korean). | New term created and displayed in the list. | Passed |
+| Create a new term without filling in the term field. | Form does not submit. Request to fill the field pops up. | Passed |
+| Create a new term without filling in the definition field. | Form does not submit. Request to fill the field pops up. | Passed |
+| Create a new term with a definition having fewer than 50 characters. | Form does not submit. Request to use at least 50 characters pops up. | Passed |
+| Create a new term with valid inputs, and verify that the new term appears in the list. | New term appears in the list. | Passed |
+
+## READ
+
+**Objective**: Ensure that terms and definitions are displayed correctly and are sortable/filterable as expected.
+
+| Test | Expected Outcome | Result |
+|------|------------------|--------|
+| View terms on the homepage while logged in. | All terms are shown with edit and delete options for terms added by the logged-in user. | Passed |
+| View terms on the homepage while not logged in. | All terms are shown with no edit and delete options. | Passed |
+| Click on a term to view its definition while logged in. | The term's definition is displayed with edit and delete options for the logged-in user. | Passed |
+| Click on a term to view its definition while not logged in. | The term's definition is displayed with no edit and delete options. | Passed |
+
+## UPDATE
+
+**Objective**: Confirm that users can update terms and definitions, and that updates are reflected correctly.
+
+| Test | Expected Outcome | Result |
+|------|------------------|--------|
+| Edit a term without filling in the term field. | Form does not submit. Request to fill the field pops up. | Passed |
+| Edit a term without filling in the definition field. | Form does not submit. Request to fill the field pops up. | Passed |
+| Edit a term with a definition having fewer than 50 characters. | Form does not submit. Request to use at least 50 characters pops up. | Passed |
+| Update a term and verify the updated information is displayed. | Updated term information is shown on the list and detail page. | Passed |
+| Try to update a term that was not created by the logged-in user. | Form does not submit or shows an error message. | Passed |
+
+## DELETE
+
+**Objective**: Ensure that users can delete terms and that terms are removed from the list as expected.
+
+| Test | Expected Outcome | Result |
+|------|------------------|--------|
+| Delete a term created by the logged-in user. | Term is deleted and a confirmation message is displayed. | Passed |
+| Attempt to delete a term created by another user. | Form does not submit or shows an error message. | Passed |
+
+## LOGIN
+
+**Objective**: Verify that the login functionality works as expected and provides access to appropriate features.
+
+| Test | Expected Outcome | Result |
+|------|------------------|--------|
+| Input existing username and correct password. | User is logged in. "Welcome back, {USERNAME}" message shows. | Passed |
+| Input username that does not exist. | Form does not submit. "Incorrect Username and/or Password" message pops up. | Passed |
+| Input wrong password. | Form does not submit. "Incorrect Username and/or Password" message pops up. | Passed |
+
+## GUARDING FROM FORCED ACTIONS
+
+**Objective**: Ensure that unauthorized actions are properly guarded and result in appropriate error messages.
+
+| Test | Expected Outcome | Result |
+|------|------------------|--------|
+| Force URL to add/edit/delete term while not logged in. | Error 404 page shows. | Passed |
+| Force URL to add/edit/delete term while logged in but not as the term creator. | Redirected to main page or error page. | Passed |
+| Force URL to edit/delete term while logged in as the creator. | Edit or delete action is performed. | Passed |
+
+## NAVIGATION
+
+**Objective**: Test the functionality of navigation links across the site.
+
+| Test | Expected Outcome | Result |
+|------|------------------|--------|
+| Click on the logo from any page. | Redirects to the homepage. | Passed |
+| Click on "Home" navigation button from any page (while logged in and not logged in). | Homepage loads. | Passed |
+| Click "Log out" button from any page (while logged in). | User gets logged out. "You have been logged out." message shows. | Passed |
+| Click "Log in" or "Register" navigation button from any page (while not logged in). | Log in or Register page loads. | Passed |
 
 ### Automation test
-
+Automation testing is a software testing process that uses specialized tools and scripts to automatically execute test cases, compare actual results with expected outcomes, and report discrepancies. An example of this software is jest. Only manual testing will be used for this development.
 
 ## Validation Tests
 
