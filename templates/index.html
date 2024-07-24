@@ -5,9 +5,16 @@
 {% block content %}
 <div class="container mt-4">
     {% if message %}
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info no-results" role="alert">
             {{ message }}
         </div>
+    {% endif %}
+    {% if request.args.get('query') %}
+    <div class="mb-4 sBack">
+        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+            Back
+        </a>
+    </div>
     {% endif %}
     <div class="row">
         {% for definition in definitions %}
@@ -36,7 +43,3 @@
     </div>
 </div>
 {% endblock %}
-
-
-
-
