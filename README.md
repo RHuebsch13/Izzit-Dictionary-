@@ -208,7 +208,12 @@ Testing is done to verify that the software behaves as expected and meets the sp
 Automation testing is a software testing process that uses specialized tools and scripts to automatically execute test cases, compare actual results with expected outcomes, and report discrepancies. An example of this software is jest. Only manual testing will be used for this development.
 
 ## Validation Tests
+![Python](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/python_validation.png?raw=true)
+![Javascript](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/JS_validation.png?raw=true)
 
+[View the PDF - CSS Validation](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/CSS_validation.pdf)
+
+[View the PDF - HTML Validation](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/HTML_validation.pdf)
 
 ## Lighthouse Testing
 [View the PDF - mobile](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/lighthouseDesktop.pdf)
