@@ -135,10 +135,10 @@ Testing is done to verify that the software behaves as expected and meets the sp
 
 | Test | Expected Outcome | Result |
 |------|------------------|--------|
-| Create a new term with various special characters and lengths, including non-Latin characters (e.g., Polish, Japanese, Korean). | New term created and displayed in the list. | Passed |
+| Create a new term with various special characters and lengths. | New term created and displayed in the list. | Passed |
 | Create a new term without filling in the term field. | Form does not submit. Request to fill the field pops up. | Passed |
 | Create a new term without filling in the definition field. | Form does not submit. Request to fill the field pops up. | Passed |
-| Create a new term with a definition having fewer than 50 characters. | Form does not submit. Request to use at least 50 characters pops up. | Passed |
+| Create a new term with a definition having fewer than 50 characters. | Form does not submit. Request to use at least 50 characters pops up. |  |
 | Create a new term with valid inputs, and verify that the new term appears in the list. | New term appears in the list. | Passed |
 
 ## READ
@@ -149,8 +149,6 @@ Testing is done to verify that the software behaves as expected and meets the sp
 |------|------------------|--------|
 | View terms on the homepage while logged in. | All terms are shown with edit and delete options for terms added by the logged-in user. | Passed |
 | View terms on the homepage while not logged in. | All terms are shown with no edit and delete options. | Passed |
-| Click on a term to view its definition while logged in. | The term's definition is displayed with edit and delete options for the logged-in user. | Passed |
-| Click on a term to view its definition while not logged in. | The term's definition is displayed with no edit and delete options. | Passed |
 
 ## UPDATE
 
@@ -179,9 +177,8 @@ Testing is done to verify that the software behaves as expected and meets the sp
 
 | Test | Expected Outcome | Result |
 |------|------------------|--------|
-| Input existing username and correct password. | User is logged in. "Welcome back, {USERNAME}" message shows. | Passed |
-| Input username that does not exist. | Form does not submit. "Incorrect Username and/or Password" message pops up. | Passed |
-| Input wrong password. | Form does not submit. "Incorrect Username and/or Password" message pops up. | Passed |
+| Input existing username and correct password. | User is logged in.| Passed |
+| Input username that does not exist. | Form does not submit. "Incorrect Username and/or Password" message pops up. |  |
 
 ## GUARDING FROM FORCED ACTIONS
 
@@ -189,9 +186,7 @@ Testing is done to verify that the software behaves as expected and meets the sp
 
 | Test | Expected Outcome | Result |
 |------|------------------|--------|
-| Force URL to add/edit/delete term while not logged in. | Error 404 page shows. | Passed |
-| Force URL to add/edit/delete term while logged in but not as the term creator. | Redirected to main page or error page. | Passed |
-| Force URL to edit/delete term while logged in as the creator. | Edit or delete action is performed. | Passed |
+| Force URL to add/edit/delete term while not logged in. | Redirected to main page or error page. | Passed |
 
 ## NAVIGATION
 
@@ -200,15 +195,16 @@ Testing is done to verify that the software behaves as expected and meets the sp
 | Test | Expected Outcome | Result |
 |------|------------------|--------|
 | Click on the logo from any page. | Redirects to the homepage. | Passed |
-| Click on "Home" navigation button from any page (while logged in and not logged in). | Homepage loads. | Passed |
+| Click on the log in icon. | Redirects to log in and registration forms. | Passed |
 | Click "Log out" button from any page (while logged in). | User gets logged out. "You have been logged out." message shows. | Passed |
-| Click "Log in" or "Register" navigation button from any page (while not logged in). | Log in or Register page loads. | Passed |
+| Click on back buttons. | Redirects to the homepage. | Passed |
 
 ### Automation test
 Automation testing is a software testing process that uses specialized tools and scripts to automatically execute test cases, compare actual results with expected outcomes, and report discrepancies. An example of this software is jest. Only manual testing will be used for this development.
 
 ## Validation Tests
 ![Python](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/python_validation.png?raw=true)
+
 ![Javascript](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/JS_validation.png?raw=true)
 
 [View the PDF - CSS Validation](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/CSS_validation.pdf)
@@ -220,8 +216,11 @@ Automation testing is a software testing process that uses specialized tools and
 
 [View the PDF - desktop](https://github.com/RHuebsch13/Izziy-Dictionary-/blob/main/docs/lighthouseMobile.pdf)
 
+## Friends and Family 
+* noted that there was no back button after searching with the search bar and this made naviagtion a bit more difficult. Since, a back button was built.
 
 ## Bug Problems
+
 
 # 5. Deployment
 Project Creation
