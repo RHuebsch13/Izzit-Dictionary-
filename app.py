@@ -21,17 +21,19 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 # Initialize PyMongo
 mongo = PyMongo(app)
 
+
 # Define Schemas
 class User:
     def __init__(self, username, password):
         self.username = username
         self.password = generate_password_hash(password)
-    
+
     def to_dict(self):
         return {
             "username": self.username,
             "password": self.password
         }
+
 
 class Definition:
     def __init__(self, term, definition, created_by=None):
@@ -46,15 +48,22 @@ class Definition:
             "created_by": self.created_by,
         }
 
+
 @app.before_request
 def check_session():
     """Check if the session is valid; if not, log out the user."""
     if 'user' in session:
-        last_active = session.get('last_active', datetime.utcnow()).replace(tzinfo=None)
-        if (datetime.utcnow() - last_active) > app.config['PERMANENT_SESSION_LIFETIME']:
+        last_active = (
+            session.get('last_active', datetime.utcnow())
+            .replace(tzinfo=None)
+        )
+        current_time = datetime.utcnow()
+        session_lifetime = app.config['PERMANENT_SESSION_LIFETIME']
+        if (current_time - last_active) > session_lifetime:
             session.pop('user', None)
             return redirect(url_for('index'))
-        session['last_active'] = datetime.utcnow()
+        session['last_active'] = current_time
+
 
 # Routes
 @app.route('/')
@@ -63,14 +72,25 @@ def index():
     all_definitions = list(mongo.db.definitions.find().sort('term', 1))
     return render_template('index.html', definitions=all_definitions)
 
+
 @app.route('/browse/<letter>')
 def browse(letter):
-    # Fetch definitions that start with the selected letter
+    """Fetch definitions that start with the selected letter."""
     if letter == '*':
         definitions = list(mongo.db.definitions.find({}))
     else:
-        definitions = list(mongo.db.definitions.find({'term': {'$regex': f'^{letter}', '$options': 'i'}}))
-    return render_template('browse.html', definitions=definitions, letter=letter)
+        regex = f'^{letter}'
+        definitions = list(
+            mongo.db.definitions.find(
+                {'term': {'$regex': regex, '$options': 'i'}}
+            )
+        )
+    return render_template(
+        'browse.html',
+        definitions=definitions,
+        letter=letter
+    )
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -87,11 +107,13 @@ def login():
             flash('Invalid username or password')
     return render_template('login.html')
 
+
 @app.route('/logout')
 def logout():
     session.pop('user', None)
     session.pop('last_active', None)
     return redirect(url_for('index'))
+
 
 @app.route('/add_term', methods=['GET', 'POST'])
 def add_term():
@@ -113,16 +135,29 @@ def add_term():
 
     return render_template('add_term.html')
 
+
 @app.route('/search', methods=['GET'])
 def search():
     query = request.args.get('query')
     if query:
-        matching_definitions = list(mongo.db.definitions.find({'term': {'$regex': query, '$options': 'i'}}))
+        matching_definitions = list(
+            mongo.db.definitions.find(
+                {'term': {'$regex': query, '$options': 'i'}}
+            )
+        )
     else:
         matching_definitions = []
 
-    message = "No results found." if not matching_definitions and query else None
-    return render_template('index.html', definitions=matching_definitions, message=message)
+    message = (
+        "No results found." if not matching_definitions and query
+        else None
+    )
+    return render_template(
+        'index.html',
+        definitions=matching_definitions,
+        message=message
+    )
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -141,7 +176,8 @@ def register():
         if existing_user is None:
             user = User(username=username, password=password)
             users.insert_one(user.to_dict())
-            session['user'] = str(users.find_one({'username': username})['_id'])
+            user_id = users.find_one({'username': username})['_id']
+            session['user'] = str(user_id)
             session.permanent = True
             session['last_active'] = datetime.utcnow()
             return redirect(url_for('index'))
@@ -150,6 +186,7 @@ def register():
             return redirect(url_for('register'))
 
     return render_template('register.html')
+
 
 @app.route('/edit_term/<term_id>', methods=['GET', 'POST'])
 def edit_term(term_id):
@@ -174,6 +211,7 @@ def edit_term(term_id):
 
     return redirect(url_for('index'))
 
+
 @app.route('/delete_term/<term_id>', methods=['POST'])
 def delete_term(term_id):
     if 'user' not in session:
@@ -186,6 +224,7 @@ def delete_term(term_id):
         return redirect(url_for('index'))
 
     return redirect(url_for('index'))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP", "0.0.0.0"),
