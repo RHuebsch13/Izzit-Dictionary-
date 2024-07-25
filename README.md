@@ -220,19 +220,18 @@ Automation testing is a software testing process that uses specialized tools and
 * Noted that there was no back button after searching with the search bar and this made naviagtion a bit more difficult. Since, a back button was built.
 
 ## Bug Problems
-1. Connecting the mongoDB database was an issue. WIth help from tutor support, the error was corrected. The connection string being used initially was missing the database name. 
-* Incorrect connection string: mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>.tfci8tb.mongodb.net/?retryWrites=true&w=majority
-* Correct connection string, including the database name: mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>.tfci8tb.mongodb.net/<DATABASE>?retryWrites=true&w=majority
+1. Bugs in intial building:
+* Connecting the mongoDB database was an issue. WIth help from tutor support, the error was corrected. The connection string being used initially was missing the database name. Incorrect connection string: mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>.tfci8tb.mongodb.net/?retryWrites=true&w=majority. Correct connection string, including the database name: mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>.tfci8tb.mongodb.net/<DATABASE>?retryWrites=true&w=majority
+* Materialize not displaying cards in the way that was requred, switched to bootstrap, according to suggestions on slack.
 
-2. After deployment, when the app was being run off Heroku, clicking on the following letters; A, E, G, H, I, L, M, N, P, R, S, V, W, X, Y, Z would cause a security error. Heroku logs were checked, the problem wasn't being cause by the deployment platform.The code was checked for any external APIs that could be causing the error. None were found as APIs not used. Therefore, the error was reported as an incorrect phishing warning and this seems to have corrected the problem. Tutor support assisted with this.
+2. After deployment:
+* When the app was being run off Heroku, clicking on the following letters; A, E, G, H, I, L, M, N, P, R, S, V, W, X, Y, Z would cause a security error. Heroku logs were checked, the problem wasn't being cause by the deployment platform.The code was checked for any external APIs that could be causing the error. None were found as APIs not used. Therefore, the error was reported as an incorrect phishing warning and this seems to have corrected the problem. Tutor support assisted with this.
 
-3. No back button after searching with the search bar, this was noted while in testing phase. A back button that returns the user to home page has been installed and is functional.
-
-4. Searching with the search bar and if no results were found, there was no message to communicate this to the user. A message has been installed that tells the user that "No results found".
-
-5. No cancel button when the edit/add term function is used. These have been added.
-
-6. If invalid details are entered when the user is loggin in, there is no message to explain why the log in failed. A message to notify the user has been added.
+3. Issues picked up during testing:
+* No back button after searching with the search bar, this was noted while in testing phase. A back button that returns the user to home page has been installed and is functional.
+* Searching with the search bar and if no results were found, there was no message to communicate this to the user. A message has been installed that tells the user that "No results found".
+* No cancel button when the edit/add term function is used. These have been added.
+* If invalid details are entered when the user is loggin in, there is no message to explain why the log in failed. A message to notify the user has been added.
 
 # 5. Deployment
 Project Creation
@@ -294,10 +293,27 @@ To clone this project from Github:
 
 # 6. Credits
 ## Code
-
+* Tim Nelson from Code institute's; Mini Project, Putting It All Together.
+* Tutor Support with database connection problem.
+* Slack for general problem solving tips.
+* W3schools - schemas: [here](https://www.w3schools.com/xml/schema_example.asp)
+* W3schools - session.pop() use [here](https://www.w3schools.com/jsref/prop_win_sessionstorage.asp#gsc.tab=0)
+* Stack Overflow - session.pop() [here](https://stackoverflow.com/questions/33952800/how-to-pop-a-second-value-in-session)
+* Session management - [here](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins)
+* Error handling - [here](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling)
+* Decorators - [here](https://flask.palletsprojects.com/en/3.0.x/patterns/viewdecorators/#view-decorators)
+* User authenication - [here](https://flask-login.readthedocs.io/en/latest/#flask_login.login_required)
+* CRUD opperations - [here](https://www.mongodb.com/docs/manual/crud/)
+* Use of insert_one() - [here](https://pymongo.readthedocs.io/en/stable/operations.html#insert-operations) and [here](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html)
+* Python functions - [here](https://docs.python.org/3/library/functions.html#str)
+* Use of find.one() - [here](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection.Collection.find_one)
+* Use of None - [here](https://docs.python.org/3/library/constants.html#None)
 
 ## Content
+* List of South African slang words found at: [here](https://aforathlete.fandom.com/wiki/List_of_South_African_slang_words)
 
 
 ## Media 
+* Logo created with Canva
+* picture used to create favicon: [here](https://www.istockphoto.com/vector/south-african-national-flag-official-flag-of-south-africa-accurate-colors-true-color-gm936590950-256225275)
 
