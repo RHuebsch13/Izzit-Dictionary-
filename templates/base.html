@@ -30,9 +30,15 @@
                 </div>            
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('login') }}" aria-label="Login">
-                    <i class="fas fa-user"></i>
-                </a>
+                {% if 'user' in session %}
+                    <a class="nav-link" href="{{ url_for('logout') }}" aria-label="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('login') }}" aria-label="Login">
+                        <i class="fas fa-user"></i>
+                    </a>
+                {% endif %}
             </li>
         </ul>
     </nav>
@@ -48,9 +54,6 @@
                 {% if 'user' in session %}
                     <a href="{{ url_for('add_term') }}" class="btn btn-outline-secondary" aria-label="Add Term">
                         <i class="fa-solid fa-plus-circle"></i>
-                    </a>
-                    <a href="{{ url_for('logout') }}" class="btn btn-outline-secondary" aria-label="Logout">
-                        <i class="fa-solid fa-sign-out-alt"></i>
                     </a>
                 {% else %}
                     <a href="{{ url_for('login') }}" class="btn btn-outline-secondary" aria-label="Login">
