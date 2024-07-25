@@ -99,12 +99,15 @@ def login():
         password = request.form['password']
         users = mongo.db.users
         user = users.find_one({'username': username})
+
         if user and check_password_hash(user['password'], password):
             session['user'] = str(user['_id'])
             session['last_active'] = datetime.utcnow().replace(tzinfo=None)
             return redirect(url_for('index'))
         else:
-            flash('Invalid username or password')
+            message = "Invalid username or password"
+            return render_template('login.html', message=message)
+
     return render_template('login.html')
 
 

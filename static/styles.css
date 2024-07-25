@@ -99,6 +99,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 2rem 0;
+  padding: 20px;
 }
 
 .auth-form {
@@ -141,6 +142,20 @@ body {
 
 .auth-form button:hover {
   background-color: #f37c8f;
+}
+
+/* invalid login details */
+.invalid-details {
+  color: #d15259; 
+  background-color: #fdd; 
+  border: 1px solid #d15259; 
+  padding: 10px;
+  margin-bottom: 20px; 
+  border-radius: 4px; 
+  font-size: 14px; 
+  max-width: 500px; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*Back-to-home button */

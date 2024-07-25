@@ -5,6 +5,15 @@
 {% block meta_description %}Log in to access and manage your dictionary account.{% endblock %}
 
 {% block content %}
+
+    <div>       
+         <!-- Error Message -->
+        {% if message %}
+            <div class="alert invalid-details" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+    </div>
     <section class="auth-container">
         <!-- Login Form -->
         <div class="auth-form">
