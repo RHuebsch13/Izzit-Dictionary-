@@ -25,10 +25,12 @@ mongo = PyMongo(app)
 # Define Schemas
 class User:
     def __init__(self, username, password):
+        """Initialize a new user with a username and hashed password."""
         self.username = username
         self.password = generate_password_hash(password)
 
     def to_dict(self):
+        """Convert the user object to a dictionary."""
         return {
             "username": self.username,
             "password": self.password
@@ -37,11 +39,13 @@ class User:
 
 class Definition:
     def __init__(self, term, definition, created_by=None):
+        """Initialize a new definition with a term, definition, and optional creator."""
         self.term = term
         self.definition = definition
         self.created_by = created_by
 
     def to_dict(self):
+        """Convert the definition object to a dictionary."""
         return {
             "term": self.term,
             "definition": self.definition,
@@ -68,7 +72,7 @@ def check_session():
 # Routes
 @app.route('/')
 def index():
-    # Fetch all definitions sorted by term alphabetically
+    """Fetch all definitions sorted by term alphabetically."""
     all_definitions = list(mongo.db.definitions.find().sort('term', 1))
     return render_template('index.html', definitions=all_definitions)
 
@@ -94,6 +98,7 @@ def browse(letter):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """Handle user login."""
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -113,6 +118,7 @@ def login():
 
 @app.route('/logout')
 def logout():
+    """Log out the current user."""
     session.pop('user', None)
     session.pop('last_active', None)
     return redirect(url_for('index'))
@@ -120,6 +126,7 @@ def logout():
 
 @app.route('/add_term', methods=['GET', 'POST'])
 def add_term():
+    """Add a new term to the dictionary."""
     if 'user' not in session:
         return redirect(url_for('login'))
 
@@ -141,6 +148,7 @@ def add_term():
 
 @app.route('/search', methods=['GET'])
 def search():
+    """Search for terms in the dictionary."""
     query = request.args.get('query')
     if query:
         matching_definitions = list(
@@ -164,6 +172,7 @@ def search():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    """Handle user registration."""
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -193,6 +202,7 @@ def register():
 
 @app.route('/edit_term/<term_id>', methods=['GET', 'POST'])
 def edit_term(term_id):
+    """Edit an existing term in the dictionary."""
     if 'user' not in session:
         return redirect(url_for('login'))
 
@@ -217,6 +227,7 @@ def edit_term(term_id):
 
 @app.route('/delete_term/<term_id>', methods=['POST'])
 def delete_term(term_id):
+    """Delete a term from the dictionary."""
     if 'user' not in session:
         return redirect(url_for('login'))
 
