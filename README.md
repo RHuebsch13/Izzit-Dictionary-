@@ -178,7 +178,7 @@ Testing is done to verify that the software behaves as expected and meets the sp
 | Test | Expected Outcome | Result |
 |------|------------------|--------|
 | Input existing username and correct password. | User is logged in.| Passed |
-| Input username that does not exist. | Form does not submit. "Incorrect Username and/or Password" message pops up. |  |
+| Input username that does not exist. | Form does not submit. "Invalid Details" message pops up.| Passed |
 
 ## GUARDING FROM FORCED ACTIONS
 
