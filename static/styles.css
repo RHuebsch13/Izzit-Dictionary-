@@ -310,6 +310,19 @@ body {
   padding-top: 5%;
 }
 
+/*cancel button*/
+.cancel {
+  background-color: white;
+  border: 1px solid #808080; 
+  border-radius: 5px;
+  color: #808080; 
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none; 
+  display: inline-block;
+  text-align: center; 
+}
+
 /* Media Queries */
 @media (max-width: 768px) and (min-width: 425px) {
   .navbar-nav {

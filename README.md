@@ -230,9 +230,9 @@ Automation testing is a software testing process that uses specialized tools and
 
 4. Searching with the search bar and if no results were found, there was no message to communicate this to the user. A message has been installed that tells the user that "No results found".
 
-5. No cancel button when the edit term function is used. 
+5. No cancel button when the edit/add term function is used. These have been added.
 
-6. If invalid details are entered when the user is loggin in, there is no message to explain why the log in failed.
+6. If invalid details are entered when the user is loggin in, there is no message to explain why the log in failed. A message to notify the user has been added.
 
 # 5. Deployment
 Project Creation
