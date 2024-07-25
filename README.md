@@ -308,10 +308,10 @@ To clone this project from Github:
 * Python functions - [here](https://docs.python.org/3/library/functions.html#str)
 * Use of find.one() - [here](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection.Collection.find_one)
 * Use of None - [here](https://docs.python.org/3/library/constants.html#None)
+* Docstrings - [here](https://peps.python.org/pep-0257/)
 
 ## Content
 * List of South African slang words found at: [here](https://aforathlete.fandom.com/wiki/List_of_South_African_slang_words)
-
 
 ## Media 
 * Logo created with Canva
