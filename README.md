@@ -234,55 +234,18 @@ Automation testing is a software testing process that uses specialized tools and
 * If invalid details are entered when the user is loggin in, there is no message to explain why the log in failed. A message to notify the user has been added.
 
 # 5. Deployment
-Project Creation
-CI MongoDB Full Template to create this project:
 
-Click on 'Use this template' and select 'Create a new repository'
-Enter your chosen repo name
-Click 'Create Repository'
-From the new GitHub repo copy the the page URL
-Open Code Anywhere and navigate to the 'workspaces' page
-Click on 'New Workspace'
-Paste the GitHub repo URL in to the 'Repository URL' box
-Click 'Create'
-Deployment to Heroku
-I used Heroku to deploy this project.
+#### CI MongoDB Full Template to create this project:
+* Click on 'Use this template' and select 'Create a new repository'
+* Enter your chosen repo name
+* Click 'Create Repository'
+* From the new GitHub repo copy the the page URL
+* Open codeinstitute-ide and navigate to the 'workspaces' page
+* Click on 'New Workspace'
+* Select a Repository and paste/search the GitHub repo URL in to thebox
+* Click 'Create'
 
-To deploy to Heroku:
-
-In Code Anywhere CLI from the main directory run pip3 freeze > requirements.txt to create/update a requirements.txt file containing project dependencies.
-In Code Anywhere CLI from the main directory run echo web: python app.py > Procfile to create a Procfile. Check that the file contains the text 'web: python app.py' and delete any blank lines at the bottom.
-Push the 2 new files to the GitHub repository
-Login to Heroku, select 'Create New App', create a unique name for the app and select your nearest region. Click 'Create App'
-Navigate to the Deploy tab on Heroku dashboard and select Github, search for your repository by name and click 'connect'.
-Navigate to 'settings', click reveal config vars and input the the following:
-Key	Value
-CLOUD_API_KEY	Cloudinary API key
-CLOUD_API_SECRET	Cloudinary API secret
-CLOUD_NAME	Cloudinary Name
-IP	0.0.0.0
-PORT	5000
-MONGO_DB	Mongodb Database Name
-MONGO_URI	mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>.tfci8tb.mongodb.net/<DATABASE>?retryWrites=true&w=majority
-SECRET_KEY	Secret Key From env.py required for 'Session' & 'Flash' functions of Flask
-Go back to the Deploy tab and click on 'Enable Automatic Deploys'
-Click deploy branch
-Once build is complete click on 'View' to launch the new app
-Local Development
-NB: This project will not run locally with database connections unless hte user sets up an env.py file configuring the above environment variables as these are not included in the GitHub files for security reasons.
-
-To Run Locally:
-
-Navigate to the GitHub Repository
-Click on 'Code' & select 'Download Zip' to download the files locally and open with an IDE or Copy the URL from the top box
-If copying the code open your development editor & in the terminal use the 'Git Clone' command followed by the above URL to create a clone of the project locally.
-To Fork Project:
-
-Navigate to the GitHub Repository
-Click on the 'Fork' button at the top right of the page
-This will duplicate the project for you to work on
-
-## How work on the project code within a local IDE
+#### How work on the project code within a local IDE:
 To clone this project from Github:
 1. Follow this link to the Project Github respository; [here](https://github.com/RHuebsch13/)
 2. Under respository name; select 'clone or download'
@@ -290,6 +253,30 @@ To clone this project from Github:
 4. In your IDE open the terminl.
 5. Change the working directory to the location where you want the cloned directory to be made
 6. Type git clone and your URL from step 3 
+
+
+#### Deployment to Heroku:
+1. Set Up Your Local Environment
+* Ensure git is installed. Check by running git --version in your terminal.
+* Ensure Heroku CLI is installed. Check by running heroku --version in your terminal.
+
+2. Prepare Your Flask Application
+* Ensure your Flask application follows a standard structure.
+* Create a virtual environment: python -m venv venv
+
+3. Install necessary packages; Flask, Pymongo etc.
+* Run pip3 freeze > requirements.txt to create/update a requirements.txt file containing project dependencies.
+* Run echo web: python app.py > Procfile to create a Procfile. Check that the file contains the text 'web: python app.py' and delete any blank lines at the bottom.
+* Push the 2 new files to the GitHub repository
+
+4. On Heroku, log in:
+* Select 'Create New App', create a unique name for the app and select your nearest region. 
+* Click 'Create App'
+* Navigate to the Deploy tab on Heroku dashboard and select Github, search for your repository by name and click 'connect'.
+* Navigate to 'settings', click reveal config vars and input the the following: IP, MONGO_DBNAME, MONGO_URI, PORT, SECRET_KEY.
+* Go back to the Deploy tab and click on 'Enable Automatic Deploys'
+* Click deploy branch
+* Once build is complete click on 'Open app' to launch the new app
 
 # 6. Credits
 ## Code
