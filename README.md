@@ -231,6 +231,7 @@ Automation testing is a software testing process that uses specialized tools and
 * Searching with the search bar and if no results were found, there was no message to communicate this to the user. A message has been installed that tells the user that "No results found".
 * No cancel button when the edit/add term function is used. These have been added.
 * If invalid details are entered when the user is loggin in, there is no message to explain why the log in failed. A message to notify the user has been added.
+* Log out button used to be next to the add term button, this was noted to be confusing. The log out button has been moved to the nav bar, in the same position as the log in button. When a user is logged in, the log in button is not visible as it is replaced with the log out button. This should clarify function.
 
 # 5. Deployment
 
