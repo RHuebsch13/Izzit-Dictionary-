@@ -302,5 +302,8 @@ To clone this project from Github:
 
 ## Media 
 * Logo created with Canva
-* picture used to create favicon: [here](https://www.istockphoto.com/vector/south-african-national-flag-official-flag-of-south-africa-accurate-colors-true-color-gm936590950-256225275)
+* Picture used to create favicon: [here](https://www.istockphoto.com/vector/south-african-national-flag-official-flag-of-south-africa-accurate-colors-true-color-gm936590950-256225275)
+
+## Design Inspiration
+* [Urban Dictionary](www.urbandictionary.com)
 
