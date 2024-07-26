@@ -138,7 +138,6 @@ Testing is done to verify that the software behaves as expected and meets the sp
 | Create a new term with various special characters and lengths. | New term created and displayed in the list. | Passed |
 | Create a new term without filling in the term field. | Form does not submit. Request to fill the field pops up. | Passed |
 | Create a new term without filling in the definition field. | Form does not submit. Request to fill the field pops up. | Passed |
-| Create a new term with a definition having fewer than 50 characters. | Form does not submit. Request to use at least 50 characters pops up. |  |
 | Create a new term with valid inputs, and verify that the new term appears in the list. | New term appears in the list. | Passed |
 
 ## READ
@@ -186,7 +185,7 @@ Testing is done to verify that the software behaves as expected and meets the sp
 
 | Test | Expected Outcome | Result |
 |------|------------------|--------|
-| Force URL to add/edit/delete term while not logged in. | Redirected to main page or error page. | Passed |
+| Force URL to add/edit/delete term while not logged in. | Redirected to main page. | Passed |
 
 ## NAVIGATION
 
