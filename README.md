@@ -302,7 +302,7 @@ To clone this project from Github:
 * List of South African slang words found at: [here](https://aforathlete.fandom.com/wiki/List_of_South_African_slang_words)
 
 ## Media 
-* Logo created with Canva
+* Logo created with [Canva](https://www.canva.com/templates/)
 * Picture used to create favicon: [here](https://www.istockphoto.com/vector/south-african-national-flag-official-flag-of-south-africa-accurate-colors-true-color-gm936590950-256225275)
 
 ## Design Inspiration
