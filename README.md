@@ -281,8 +281,6 @@ To clone this project from Github:
 # 6. Credits
 ## Code
 * Tim Nelson from Code institute's; Mini Project, Putting It All Together.
-* Tutor Support with database connection problem.
-* Slack for general problem solving tips.
 * W3schools - schemas: [here](https://www.w3schools.com/xml/schema_example.asp)
 * W3schools - session.pop() use [here](https://www.w3schools.com/jsref/prop_win_sessionstorage.asp#gsc.tab=0)
 * Stack Overflow - session.pop() [here](https://stackoverflow.com/questions/33952800/how-to-pop-a-second-value-in-session)
@@ -290,12 +288,15 @@ To clone this project from Github:
 * Error handling - [here](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling)
 * Decorators - [here](https://flask.palletsprojects.com/en/3.0.x/patterns/viewdecorators/#view-decorators)
 * User authenication - [here](https://flask-login.readthedocs.io/en/latest/#flask_login.login_required)
-* CRUD opperations - [here](https://www.mongodb.com/docs/manual/crud/)
 * Use of insert_one() - [here](https://pymongo.readthedocs.io/en/stable/operations.html#insert-operations) and [here](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html)
+* Use of redirect - [here](https://www.geeksforgeeks.org/python-flask-redirect-and-errors/)
 * Python functions - [here](https://docs.python.org/3/library/functions.html#str)
 * Use of find.one() - [here](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection.Collection.find_one)
 * Use of None - [here](https://docs.python.org/3/library/constants.html#None)
 * Docstrings - [here](https://peps.python.org/pep-0257/)
+* CRUD opperations - [here](https://www.mongodb.com/docs/manual/crud/)
+* Tutor Support with database connection problem.
+* Slack for general problem solving tips.
 
 ## Content
 * List of South African slang words found at: [here](https://aforathlete.fandom.com/wiki/List_of_South_African_slang_words)
